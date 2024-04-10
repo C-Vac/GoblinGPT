@@ -10,4 +10,5 @@
 | 92 Goblin Alert Newsletter 2.md |
 | 95 Goblin Design Document 1.md |
 | 96 Goblin Design Document 2.md |
+| 98 Goblin Shell Script Library.md |
 | 99 GoblinGPT Core Footer.md |
