@@ -1,10 +1,9 @@
 # GoblinGPT Brain Integration: A Cognitive Augmentation Platform for Distributed Cognition and Human-AI Symbiosis
 
-[View CHANGELOG](CHANGELOG.md) *Version 0.2.0 (Preview)*
+*Version 0.2.1 (Current)*
+[View CHANGELOG](CHANGELOG.md) 
 
 ## Project Overview
-
-*Version 0.1.0 (Current)*
 
 Welcome to the GoblinGPT Brain Integration project, an **AI-powered productivity suite** designed to revolutionize the way we learn, work, and interact with information. This **personal knowledge management system (PKMS)** leverages the power of **hyper-contextual language models** and **specialized AI modules** to create a **human-AI symbiosis** that enhances **distributed cognition** and unlocks the full potential of the human mind.
 
