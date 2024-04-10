@@ -16,6 +16,7 @@ Contents of any file not appearing on this manifest with Active status should be
 | 92 Goblin Alert Newsletter 2.md                |
 | 95 Goblin Design Document 1.md                 |
 | 96 Goblin Design Document 2.md                 |
+| 98 Goblin Shell Script Library                 |
 | 99 GoblinGPT Core Footer.md                    |
 
 | Inactive files                                 |
