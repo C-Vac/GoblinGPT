@@ -4,7 +4,7 @@ Files are now numbered starting with `00 GoblinGPT Core Header` and ending with 
 
 Contents of any file not appearing on this manifest with Active status should be ignored. 
 
-| ~Active Files~
+| Active Files
 | :--------------------------------------------- |
 | 00 GoblinGPT Core Header.md                    |
 | 01 GoblinGPT Core Initialize.md                |

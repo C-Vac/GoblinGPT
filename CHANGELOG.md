@@ -1,6 +1,16 @@
 # CHANGELOG
 
-## Version 0.2.0 (In Progress)
+## Version 0.2.1 (Current) 
+
+* Releasing 0.2.1 because the features described in the previous two updates were fraudulent and we would like to apologize to the thoudands of goblins who installed our package, hoping for the experience of a lifetime.
+* More features are planned soon, but for now you can dive in and expect plenty of <CODE> and UHHH if you use these prompts!
+
+* Planned: Add mayonnaise + mustard to the cold cut sandwich builder module (currently only allows nacho cheese dip and horseradish as toppings)
+  * Phase 1 completion ETA: June 2029
+
+* Thanks for the continued support, we'll meet again soon.
+
+## Version 0.2.0
 
 * Refinement of the user interface based on user feedback and usability testing.
 * Development of the schedule management module with time blocking and activity tracking features.
