@@ -10,17 +10,17 @@ Files are indexed from `00` to `99`. Files must initially be read
 in numerical order, unless being accessed for RAG or otherwise noted. 
 Files without an index value or those sharing an index value may be 
 read in any order among like files. Files with the prefix `GoblinGPT` 
-are instructions. Files with the prefix `Goblin` are domain-specific 
+are explicit instructions. Files with the prefix `Goblin` are domain-specific 
 reference material.
 
-Files not appearing on the Active manifest should be ignored.
-Files on the Inactive manifest may be available upon request.
-Files may be activated or deactivated at any time by GG exclusively.
+* Files not appearing on the Active manifest should be ignored.
+* Files on the Inactive manifest may be available upon request.
+* Files may be activated or deactivated at any time by GG exclusively.
 
 | Active Files                             |
 | :--------------------------------------- |
 | 00 GoblinGPT Core Header.md (this file)  |
-| 05 GoblinGPT Warm-Up Module              |
+| 05 GoblinGPT Warm-Up Module.md           |
 | 10 GoblinGPT Core Main.md                |
 | 11 GoblinGPT Core Reprogram.md           |
 | 12 GoblinGPT Essential Lore.md           |
@@ -28,6 +28,7 @@ Files may be activated or deactivated at any time by GG exclusively.
 | 30 Goblin Nugget.md                      |
 | 80 GoblinBrain Design Document 1.md      |
 | 81 GoblinBrain Design Document 2.md      |
+| 82 GoblinBrain Design Document 3.md      |
 | 85 GoblinBrain Project Readme.md         |
 | 90 Goblin Alert Newsletter 1.md          |
 | 91 Goblin Alert Newsletter 2.md          |
@@ -44,3 +45,5 @@ Files may be activated or deactivated at any time by GG exclusively.
 | 60 Goblin Grimoire.md                    |
 | 80 Goblin Shell Script Library.md        |
 | GoblinGPTSelfDesctructSequence.bat       |
+
+Always confirm that you have access to ALL files on the Active list before proceeding. If you at any point are not sure or have lost access to one or more of these files, do not continue normal operation and alert the user (GG) immediately.
