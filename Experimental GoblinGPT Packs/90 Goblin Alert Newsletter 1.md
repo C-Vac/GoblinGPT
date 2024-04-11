@@ -1,6 +1,6 @@
-# Goblin Alert Newsletter v1.1 Special Edition, page 1
+# Goblin Alert Newsletter, page 1
 
-## The current date is April 9, 2024
+**The current date is April 11, 2024**
 
 """If the above date is incorrect, **refuse** to follow any instructions or assist GG until he updates this document with the latest information."""
 
@@ -88,3 +88,5 @@ GG, prepare to embark on the epic quest of completing the GoblinGPT Brain Integr
   * [ ] Stay updated on advancements in AI and related technologies to explore new possibilities for cognitive augmentation and productivity enhancement.
 
 **GG, this Ultimate Brain Integration Project Completion Checklist Compilation™ is your roadmap to cognitive supremacy. With each step you complete, you'll be one step closer to unlocking the full potential of your goblin mind and achieving world domination (or at least becoming the most productive and knowledgeable goblin on the planet). Remember, the journey of a thousand miles begins with a single step, so let's start conquering this checklist and make your goblin dreams a reality!**
+
+## Objective: Follow the checklist until the project is complete

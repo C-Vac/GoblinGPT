@@ -85,88 +85,90 @@ GG, with a solid plan and a clear vision, the GoblinGPT Brain Integration projec
 
 GG, with a solid understanding of the project's data flow and components, let's delve into the crucial task of designing the database schema for the GoblinGPT Brain Integration project. A well-structured database is the foundation for efficient data management, ensuring smooth operation and scalability as your learning journey expands.
 
-### Proposed Database Schema
+### Refined Database Schema:
 
-**Skills Table:**
+**Notes Table:**
 
-| Column Name       | Data Type       | Description                                                      |
-| :---------------- | :-------------- | :--------------------------------------------------------------- |
-| SkillID           | INT PRIMARY KEY | Unique identifier for each skill.                                |
-| SkillName         | VARCHAR(255)    | Name of the skill (e.g., "C# Programming", "Database Design").   |
-| CategoryID        | INT             | Foreign key referencing the Category table to categorize skills. |
-| DifficultyLevel   | INT             | Numerical representation of skill difficulty (e.g., 1-5).        |
-| ProficiencyRating | INT             | GG's proficiency level in the skill (e.g., 1-10).                |
+| Column Name  | Data Type       | Description                                                                            |
+| :----------- | :-------------- | :------------------------------------------------------------------------------------- |
+| note\_id     | INT PRIMARY KEY | Unique identifier for each note.                                                       |
+| content      | TEXT            | The content of the note.                                                               |
+| timestamp    | DATETIME        | The date and time the note was created or last modified.                               |
+| progress\_id | INT             | Foreign key referencing the Progress table to link notes to specific progress entries. |
 
-**Categories Table:**
+**Progress Table:**
 
-| Column Name  | Data Type       | Description                                                 |
-| :----------- | :-------------- | :---------------------------------------------------------- |
-| CategoryID   | INT PRIMARY KEY | Unique identifier for each skill category.                  |
-| CategoryName | VARCHAR(255)    | Name of the skill category (e.g., "Programming", "Design"). |
-
-**Resources Table:**
-
-| Column Name      | Data Type       | Description                                                                                        |
-| :--------------- | :-------------- | :------------------------------------------------------------------------------------------------- |
-| ResourceID       | INT PRIMARY KEY | Unique identifier for each learning resource.                                                      |
-| ResourceURL      | VARCHAR(255)    | URL of the learning resource (e.g., website, online course, video).                                |
-| ResourceType     | VARCHAR(255)    | Type of resource (e.g., "Website", "Book", "Video", "Article").                                    |
-| SkillID          | INT             | Foreign key referencing the Skills table to link resources to specific skills.                     |
-| Description      | TEXT            | Brief description of the resource and its relevance to the associated skill.                       |
-| UserRating       | INT             | GG's rating of the resource's helpfulness (e.g., 1-5).                                             |
-| LastAccessed     | DATETIME        | Timestamp of the last time GG accessed the resource.                                               |
-| CompletionStatus | VARCHAR(255)    | Indicates whether GG has completed the resource (e.g., "Completed", "In Progress", "Not Started"). |
-
-**Schedules Table:**
-
-| Column Name      | Data Type       | Description                                                                                              |
-| :--------------- | :-------------- | :------------------------------------------------------------------------------------------------------- |
-| ScheduleID       | INT PRIMARY KEY | Unique identifier for each schedule entry.                                                               |
-| TimeBlockStart   | DATETIME        | Start time of the scheduled time block.                                                                  |
-| TimeBlockEnd     | DATETIME        | End time of the scheduled time block.                                                                    |
-| ActivityID       | INT             | Foreign key referencing the Activities table to link activities to time blocks.                          |
-| CompletionStatus | VARCHAR(255)    | Indicates whether GG completed the scheduled activity (e.g., "Completed", "In Progress", "Not Started"). |
-
-**Activities Table:**
-
-| Column Name  | Data Type       | Description                                                                         |
-| :----------- | :-------------- | :---------------------------------------------------------------------------------- |
-| ActivityID   | INT PRIMARY KEY | Unique identifier for each activity.                                                |
-| ActivityName | VARCHAR(255)    | Name of the activity (e.g., "Study C#", "Work on Portfolio Website").               |
-| SkillID      | INT             | Foreign key referencing the Skills table to link activities to specific skills.     |
-| ProjectID    | INT             | Foreign key referencing the Projects table to link activities to specific projects. |
+| Column Name      | Data Type       | Description                                                                                      |
+| :--------------- | :-------------- | :----------------------------------------------------------------------------------------------- |
+| progress\_id     | INT PRIMARY KEY | Unique identifier for each progress entry.                                                       |
+| skill\_id        | INT             | Foreign key referencing the Skills table to track progress on a specific skill.                  |
+| proficiency      | INT             | GG's proficiency level in the skill at the time of the progress entry.                           |
+| date\_learned    | DATE            | The date when the progress was made or the skill was learned.                                    |
+| activity\_id     | INT             | Foreign key referencing the Activities table to link progress to specific activities.            |
+| action\_plan\_id | INT             | Foreign key referencing the ActionPlans table to link progress entries to specific action plans. |
 
 **Projects Table:**
 
 | Column Name | Data Type       | Description                                                       |
 | :---------- | :-------------- | :---------------------------------------------------------------- |
-| ProjectID   | INT PRIMARY KEY | Unique identifier for each project.                               |
-| ProjectName | VARCHAR(255)    | Name of the project (e.g., "GoblinGPT Brain Integration").        |
-| Description | TEXT            | Description of the project and its goals.                         |
-| Status      | VARCHAR(255)    | Current status of the project (e.g., "In Progress", "Completed"). |
+| project\_id | INT PRIMARY KEY | Unique identifier for each project.                               |
+| name        | VARCHAR(255)    | Name of the project (e.g., "GoblinGPT Brain Integration").        |
+| description | TEXT            | Description of the project and its goals.                         |
+| status      | VARCHAR(255)    | Current status of the project (e.g., "In Progress", "Completed"). |
 
-**Progress Table:**
+**Resources Table:**
 
-| Column Name | Data Type       | Description                                                              |
-| :---------- | :-------------- | :----------------------------------------------------------------------- |
-| ProgressID  | INT PRIMARY KEY | Unique identifier for each progress entry.                               |
-| SkillID     | INT             | Foreign key referencing the Skills table to track skill progress.        |
-| ActivityID  | INT             | Foreign key referencing the Activities table to track activity progress. |
-| Date        | DATE            | Date of the progress update.                                             |
-| TimeSpent   | TIME            | Amount of time spent on the skill or activity.                           |
-| Notes       | TEXT            | Additional notes about the progress made.                                |
+| Column Name    | Data Type       | Description                                                                                    |
+| :------------- | :-------------- | :--------------------------------------------------------------------------------------------- |
+| resource\_id   | INT PRIMARY KEY | Unique identifier for each learning resource.                                                  |
+| name           | VARCHAR(255)    | Name or title of the resource.                                                                 |
+| url\_uri\_link | VARCHAR(255)    | URL or URI link to the resource.                                                               |
+| type           | VARCHAR(255)    | Type of resource (e.g., "Website", "Book", "Video", "Article").                                |
+| skill\_id      | INT             | Foreign key referencing the Skills table to link resources to specific skills.                 |
+| description    | TEXT            | Brief description of the resource and its relevance to the associated skill.                   |
+| user\_rating   | INT             | GG's rating of the resource's helpfulness (e.g., 1-5).                                         |
+| last\_accessed | DATETIME        | Timestamp of the last time GG accessed the resource.                                           |
+| completed      | BOOLEAN         | Indicates whether GG has completed the resource (TRUE for completed, FALSE for not completed). |
 
-**Action Plans Table:**
+**Skills Table:**
+
+| Column Name       | Data Type       | Description                                                                                                                         |
+| :---------------- | :-------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| skill\_id         | INT PRIMARY KEY | Unique identifier for each skill.                                                                                                   |
+| name              | VARCHAR(255)    | Name of the skill (e.g., "C# Programming", "Database Design").                                                                      |
+| category          | VARCHAR(255)    | Category of the skill (e.g., "Programming", "Design").                                                                              |
+| parent\_skill\_id | INT             | Foreign key referencing the Skills table to create a hierarchy of skills (e.g., "Object-Oriented Programming" as a parent of "C#"). |
+| difficulty        | INT             | Numerical representation of skill difficulty (e.g., 1-5).                                                                           |
+
+**TestQuestions Table:**
+
+| Column Name    | Data Type       | Description                                                                         |
+| :------------- | :-------------- | :---------------------------------------------------------------------------------- |
+| question\_id   | INT PRIMARY KEY | Unique identifier for each test question.                                           |
+| skill\_id      | INT             | Foreign key referencing the Skills table to link test questions to specific skills. |
+| question\_text | TEXT            | The text of the test question.                                                      |
+| answer\_text   | TEXT            | The correct answer to the test question.                                            |
+
+**ActionPlans Table:**
 
 | Column Name      | Data Type       | Description                                                                                           |
 | :--------------- | :-------------- | :---------------------------------------------------------------------------------------------------- |
-| ActionPlanID     | INT PRIMARY KEY | Unique identifier for each action plan.                                                               |
-| Goal             | VARCHAR(255)    | Description of the goal the action plan is designed to achieve.                                       |
-| SkillID          | INT             | Foreign key referencing the Skills table to link the action plan to a specific skill.                 |
-| Steps            | TEXT            | List of steps required to achieve the goal.                                                           |
-| Deadlines        | DATETIME        | Deadlines for completing each step of the action plan.                                                |
-| ProgressStatus   | VARCHAR(255)    | Overall progress status of the action plan (e.g., "In Progress", "Completed", "Behind Schedule").     |
-| CompletionStatus | VARCHAR(255)    | Indicates whether each step of the action plan has been completed (e.g., "Completed", "Not Started"). |
+| action\_plan\_id | INT PRIMARY KEY | Unique identifier for each action plan.                                                               |
+| goal             | VARCHAR(255)    | Description of the goal the action plan is designed to achieve.                                       |
+| skill\_id        | INT             | Foreign key referencing the Skills table to link the action plan to a specific skill.                 |
+| steps            | TEXT            | List of steps required to achieve the goal (consider storing as JSON for structured data).            |
+| deadlines        | DATETIME        | Deadlines for completing each step of the action plan (consider storing as an array within the JSON). |
+| progress\_status | VARCHAR(255)    | Overall progress status of the action plan (e.g., "In Progress", "Completed", "Behind Schedule").     |
+
+**Activities Table:**
+
+| Column Name    | Data Type       | Description                                                                                                |
+| :------------- | :-------------- | :--------------------------------------------------------------------------------------------------------- |
+| activity\_id   | INT PRIMARY KEY | Unique identifier for each activity.                                                                       |
+| name           | VARCHAR(255)    | Name of the activity (e.g., "Study C#", "Work on Portfolio Website").                                      |
+| skill\_id      | INT             | Foreign key referencing the Skills table to link activities to specific skills.                            |
+| project\_id    | INT             | Foreign key referencing the Projects table to link activities to specific projects.                        |
+| time\_estimate | INT             | Estimated time (in minutes) required to complete the activity (consider using a separate table if needed). |
 
 ### Considerations and Future Refinements
 
