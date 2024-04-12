@@ -1,42 +1,59 @@
 #!/bin/bash
 
-# Init vars
-manifest="manifest.md"
-output_file="compiled_goblingpt.md"
-max_length=0
-files=()
+gitRepoRootDir="$(git rev-parse --show-toplevel)"  # Git repo root
+filesToConcatDir="${gitRepoRootDir}/goblinscript" # default script folder
 
-# Document Body
-echo "# 👹 Prompt Start \n\n" > "$output_file"
+# Check if an argument is provided
+if [ "$#" -eq 1 ]; then
+  # Assign the first argument to a variable
+  filesToConcatDir="${gitRepoRootDir}/$1"
+fi
 
-for file in ./"Experimental GoblinGPT Packs"/*; do
-  if [[ -f "$file" ]]; then
-  filename=$(basename "$file")
-    echo "<--👹FILE: $filename-->\n\n" >> "$output_file"
-    
-    cat "$file" >> "$output_file"
-    echo "" >> "$output_file" 
+manifestFile="${gitRepoRootDir}/manifest.md"
+output_file="${gitRepoRootDir}/100_GoblinGPT_FULL.md"
+headerFilePattern='00*Header.md'
+headerFile=$(find "${filesToConcatDir}" -name "$headerFilePattern" -print -quit)
 
-    filename=$(basename "$file")
-    files+=("$filename")
-    length=${#filename}
-    if [[ $length -gt $max_length ]]; then
-      max_length=$length
+# Generate manifest
+{
+  echo "| Active Files | Size (bytes) |"
+  echo "| :--------------------------------------- | :----------- |"
+
+  # Iterate over files to create manifest entries
+  for file in "${filesToConcatDir}"/*; do
+    if [[ -f "$file" && "$file" != "$output_file" ]]; then
+      filename=$(basename "$file")
+      filesize=$(wc -c <"$file" | tr -d ' ')
+      echo "| $filename | $filesize |"
     fi
-  fi
-done
+  done
+} > "$manifestFile"
 
-echo "GoblinScript was succesfully compiled to: $output_file"
+# Insert manifest into the header file
+headerWithManifest=$(mktemp)
+{
+  while IFS= read -r line; do
+    # Check for the placeholder line to insert the manifest
+    if [[ "$line" == *"{INSERT_MANIFEST_HERE}"* ]]; then
+      cat "$manifestFile"
+    else
+      echo "$line"
+    fi
+  done < "$headerFile"
+} > "$headerWithManifest"
 
-# Header
-echo "| Active Modules $(printf '%.s-' $(seq 1 $max_length)) |" > "$manifest"
-echo "| :------------- $(printf '%.s-' $(seq 1 $max_length)) |" >> "$manifest"
+# Combine files
+{
+  cat "$headerWithManifest"
+  for file in "${filesToConcatDir}"/*; do
+    if [[ -f "$file" && "$file" != "$output_file" && "$file" != "$headerFile" ]]; then
+      cat "$file"
+      echo
+    fi
+  done
+} > "$output_file"
 
-Add filenames to the table
-for filename in "${files[@]}"; do
- echo "| $filename |" >> "$manifest"
-done
+# Clean up temporary files
+rm "$headerWithManifest"
 
-awk -v manifest_content="$(cat "$manifest")" '/{{\$Manifest}}/ {print manifest_content; next} 1' "$header_file" > "updated_header.md"
-
-echo "File manifest inserted into: updated_header.md"
+echo "GoblinScript files were compiled to: $output_file"
