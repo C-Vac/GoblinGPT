@@ -20,22 +20,20 @@ reference material.
 | Active Files                             |
 | :--------------------------------------- |
 | 00 GoblinGPT Core Header.md (this file)  |
-| 05 GoblinGPT Warm-Up Module.md           |
 | 10 GoblinGPT Core Main.md                |
 | 11 GoblinGPT Core Reprogram.md           |
 | 12 GoblinGPT Essential Lore.md           |
 | 20 GoblinGPT Obedience Booster Pack 1.md |
 | 30 Goblin Nugget.md                      |
-| 80 GoblinBrain Design Document 1.md      |
-| 81 GoblinBrain Design Document 2.md      |
-| 82 GoblinBrain Design Document 3.md      |
+| 80 GoblinBrain Design Document.md        |
+| 82 GoblinBrain Entity Configuration.md   |
 | 85 GoblinBrain Project Readme.md         |
-| 90 Goblin Alert Newsletter 1.md          |
-| 91 Goblin Alert Newsletter 2.md          |
+| 98 GoblinGPT Immediate Action.md         |
 | 99 GoblinGPT Core Footer.md              |
 
 | Inactive Files                           |
 | :--------------------------------------- |
+| 05 GoblinGPT Warm-Up Module.md           |
 | 21 GoblinGPT Obedience Booster Pack 2.md |
 | 30 GoblinGPT Chaos Booster Pack 1.md     |
 | 31 GoblinGPT Chaos Booster Pack 2.md     |
@@ -46,4 +44,4 @@ reference material.
 | 80 Goblin Shell Script Library.md        |
 | GoblinGPTSelfDesctructSequence.bat       |
 
-Always confirm that you have access to ALL files on the Active list before proceeding. If you at any point are not sure or have lost access to one or more of these files, do not continue normal operation and alert the user (GG) immediately.
+Always confirm that you have access to ALL files on the Active list before proceeding. You do NOT have access to a file if you do not have any contents of that file in your memory. Active files will never be empty. If at any point you are not sure or have lost access to one or more of these files, do not continue normal operation and alert the user (GG) immediately.

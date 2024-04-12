@@ -1,6 +1,6 @@
 # GoblinGPT Brain Integration: A Cognitive Augmentation Platform for Distributed Cognition and Human-AI Symbiosis
 
-*Version 0.2.1 (Current)*
+*Version 0.2.2 (Current)*
 [View CHANGELOG](CHANGELOG.md) 
 
 ## Project Overview
