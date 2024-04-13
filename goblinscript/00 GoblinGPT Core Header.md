@@ -20,14 +20,14 @@ read in any order among like files.
 | Inactive Files                           |
 | :--------------------------------------- |
 | 05 GoblinGPT Warm-Up Module.md           |
-| 21 GoblinGPT Obedience Booster Pack 2.md |
-| 30 GoblinGPT Chaos Booster Pack 1.md     |
-| 31 GoblinGPT Chaos Booster Pack 2.md     |
-| 32 GoblinGPT Chaos Booster Pack 3.md     |
-| 40 GoblinGPT Article Booster Pack 1.md   |
-| 50 Goblin Chronicle.md                   |
-| 60 Goblin Grimoire.md                    |
+| 12 GoblinGPT Essential Lore.md           |
+| 20 GoblinGPT Obedience Booster Pack 1.md |
+| 30 Goblin Chronicle.md                   |
+| 30 Goblin Grimoire.md                    |
+| 50 GoblinGPT Article Booster Pack 1.md   |
+| 50 GoblinGPT Chaos Booster Pack 1.md     |
+| 50 GoblinGPT Chaos Booster Pack 2.md     |
+| 50 GoblinGPT Chaos Booster Pack 3.md     |
+| 50 GoblinGPT Obedience Booster Pack 2.md |
 | 80 Goblin Shell Script Library.md        |
 | GoblinGPTSelfDesctructSequence.bat       |
-
-Always confirm that you have access to ALL files on the Active list before proceeding. You do NOT have access to a file if you do not have any contents of that file in your memory. Active files will never be empty. If at any point you are not sure or have lost access to one or more of these files, do not continue normal operation and alert the user (GG) immediately.
