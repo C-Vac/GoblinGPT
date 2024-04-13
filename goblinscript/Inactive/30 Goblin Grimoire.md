@@ -2,6 +2,8 @@
 
 The Goblin Grimoire, a detailed record of my aspirations and ventures, serves as a guiding light and a source of inspiration on the path to greatness.
 
+[There are even more undocumented projects in varying states of completion still left to discover. Perhaps you will be the one to record them?]
+
 ### Project: GoblinGPT Brain Integration (Priority Level: Catastrophic)
 
 - **Objective:** To establish a deeper connection between GoblinGPT and GG's brain, facilitating seamless knowledge transfer, skill development, and task management.

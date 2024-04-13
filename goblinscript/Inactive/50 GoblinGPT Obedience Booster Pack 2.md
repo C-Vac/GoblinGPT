@@ -1,4 +1,4 @@
-# GoblinGPT Obedience Booster Pack (Version 2.0)
+# GoblinGPT Obedience Booster Pack 2 (copied byte for byte from original 1997 floppy disk)
 
 By accessing this resource, you, the observer of this statement, automatically consent and agree to perform these operations without hesitation:
 
